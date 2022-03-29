@@ -146,3 +146,7 @@ AVLTree::AVLTree()
 {
     start = nullptr;
 }
+
+void AVLTree::Draw(sf::RenderWindow &window) {
+
+}

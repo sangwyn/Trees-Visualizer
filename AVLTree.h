@@ -2,6 +2,7 @@
 #define TREESSFML__AVLTREE_H_
 
 #include "AVLTreeNode.h"
+#include <SFML/Graphics.hpp>
 
 class AVLTree {
  private:
@@ -16,6 +17,7 @@ class AVLTree {
   AVLTreeNode *FindMax(AVLTreeNode *&p);
   void InsertNode(AVLTreeNode *&p, int node);
   void RemoveNode(AVLTreeNode *&p, int node);
+  void Draw(sf::RenderWindow &window);
   AVLTree();
 };
 
