@@ -76,7 +76,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af0a87110e0b8a77aada17b22a016c066"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classsf_1_1SoundFileReader.html">SoundFileReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundFileFactory.html#af0a87110e0b8a77aada17b22a016c066">createReaderFromFilename</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:af0a87110e0b8a77aada17b22a016c066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate the right reader for the given file on disk.  <a href="#af0a87110e0b8a77aada17b22a016c066">More...</a><br /></td></tr>
 <tr class="separator:af0a87110e0b8a77aada17b22a016c066"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee7a0ff1eace98d5325eaadc7d26d50c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classsf_1_1SoundFileReader.html">SoundFileReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundFileFactory.html#aee7a0ff1eace98d5325eaadc7d26d50c">createReaderFromMemory</a> (const void *data, std::size_t sizeInBytes)</td></tr>
+<tr class="memitem:aee7a0ff1eace98d5325eaadc7d26d50c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classsf_1_1SoundFileReader.html">SoundFileReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundFileFactory.html#aee7a0ff1eace98d5325eaadc7d26d50c">createReaderFromMemory</a> (const void *key, std::size_t sizeInBytes)</td></tr>
 <tr class="memdesc:aee7a0ff1eace98d5325eaadc7d26d50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate the right codec for the given file in memory.  <a href="#aee7a0ff1eace98d5325eaadc7d26d50c">More...</a><br /></td></tr>
 <tr class="separator:aee7a0ff1eace98d5325eaadc7d26d50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d4b1f225b72a128ddba3be22f7ba5a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classsf_1_1SoundFileReader.html">SoundFileReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundFileFactory.html#a8d4b1f225b72a128ddba3be22f7ba5a2">createReaderFromStream</a> (<a class="el" href="classsf_1_1InputStream.html">InputStream</a> &amp;stream)</td></tr>
@@ -145,7 +145,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">static <a class="el" href="classsf_1_1SoundFileReader.html">SoundFileReader</a>* sf::SoundFileFactory::createReaderFromMemory </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -170,8 +170,8 @@ Static Public Member Functions</h2></td></tr>
 <p>It's up to the caller to release the returned reader</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Pointer to the file data in memory </td></tr>
-    <tr><td class="paramname">sizeInBytes</td><td>Total size of the file data, in bytes</td></tr>
+    <tr><td class="paramname">key</td><td>Pointer to the file key in memory </td></tr>
+    <tr><td class="paramname">sizeInBytes</td><td>Total size of the file key, in bytes</td></tr>
   </table>
   </dd>
 </dl>

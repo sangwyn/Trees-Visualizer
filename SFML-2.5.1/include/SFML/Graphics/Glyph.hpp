@@ -49,7 +49,7 @@ public:
     Glyph() : advance(0) {}
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     float     advance;     ///< Offset to move horizontally to the next character
     FloatRect bounds;      ///< Bounding rectangle of the glyph, in coordinates relative to the baseline

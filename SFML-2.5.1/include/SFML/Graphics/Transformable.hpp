@@ -314,7 +314,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     Vector2f          m_origin;                     ///< Origin of translation/rotation/scaling of the object
     Vector2f          m_position;                   ///< Position of the object in the 2D world

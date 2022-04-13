@@ -152,7 +152,7 @@ public:
     bool intersects(const Rect<T>& rectangle, Rect<T>& intersection) const;
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     T left;   ///< Left coordinate of the rectangle
     T top;    ///< Top coordinate of the rectangle

@@ -192,11 +192,11 @@ Protected Member Functions</h2></td></tr>
 
 <p>Status codes that may be returned by socket functions. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90"></a>Done&#160;</td><td class="fielddoc"><p>The socket has sent / received the data. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90"></a>Done&#160;</td><td class="fielddoc"><p>The socket has sent / received the key. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09"></a>NotReady&#160;</td><td class="fielddoc"><p>The socket is not ready to send / receive data yet. </p>
+<tr><td class="fieldname"><a id="a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09"></a>NotReady&#160;</td><td class="fielddoc"><p>The socket is not ready to send / receive key yet. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706"></a>Partial&#160;</td><td class="fielddoc"><p>The socket sent a part of the data. </p>
+<tr><td class="fieldname"><a id="a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706"></a>Partial&#160;</td><td class="fielddoc"><p>The socket sent a part of the key. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a51bf0fd51057b98a10fbb866246176dcab215141f756acdc23c67fad149710eb1"></a>Disconnected&#160;</td><td class="fielddoc"><p>The TCP socket has been disconnected. </p>
 </td></tr>
@@ -520,7 +520,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the blocking state of the socket. </p>
-<p>In blocking mode, calls will not return until they have completed their task. For example, a call to Receive in blocking mode won't return until some data was actually received. In non-blocking mode, calls will always return immediately, using the return code to signal whether there was data available or not. By default, all sockets are blocking.</p>
+<p>In blocking mode, calls will not return until they have completed their task. For example, a call to Receive in blocking mode won't return until some key was actually received. In non-blocking mode, calls will always return immediately, using the return code to signal whether there was key available or not. By default, all sockets are blocking.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">blocking</td><td>True to set the socket as blocking, false for non-blocking</td></tr>

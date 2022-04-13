@@ -71,7 +71,7 @@ public:
     explicit Vector3(const Vector3<U>& vector);
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     T x; ///< X coordinate of the vector
     T y; ///< Y coordinate of the vector

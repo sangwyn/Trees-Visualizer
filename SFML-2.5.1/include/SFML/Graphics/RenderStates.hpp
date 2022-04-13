@@ -105,12 +105,12 @@ public:
                  const Texture* theTexture, const Shader* theShader);
 
     ////////////////////////////////////////////////////////////
-    // Static member data
+    // Static member key
     ////////////////////////////////////////////////////////////
     static const RenderStates Default; ///< Special instance holding the default render states
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     BlendMode      blendMode; ///< Blending mode
     Transform      transform; ///< Transform

@@ -151,12 +151,12 @@ Static Private Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classsf_1_1Vertex.html" title="Define a point with color and texture coordinates. ">Vertex</a> buffer storage for one or more 2D primitives. </p>
 <p><a class="el" href="classsf_1_1VertexBuffer.html" title="Vertex buffer storage for one or more 2D primitives. ">sf::VertexBuffer</a> is a simple wrapper around a dynamic buffer of vertices and a primitives type.</p>
-<p>Unlike <a class="el" href="classsf_1_1VertexArray.html" title="Define a set of one or more 2D primitives. ">sf::VertexArray</a>, the vertex data is stored in graphics memory.</p>
-<p>In situations where a large amount of vertex data would have to be transferred from system memory to graphics memory every frame, using <a class="el" href="classsf_1_1VertexBuffer.html" title="Vertex buffer storage for one or more 2D primitives. ">sf::VertexBuffer</a> can help. By using a <a class="el" href="classsf_1_1VertexBuffer.html" title="Vertex buffer storage for one or more 2D primitives. ">sf::VertexBuffer</a>, data that has not been changed between frames does not have to be re-transferred from system to graphics memory as would be the case with <a class="el" href="classsf_1_1VertexArray.html" title="Define a set of one or more 2D primitives. ">sf::VertexArray</a>. If data transfer is a bottleneck, this can lead to performance gains.</p>
-<p>Using <a class="el" href="classsf_1_1VertexBuffer.html" title="Vertex buffer storage for one or more 2D primitives. ">sf::VertexBuffer</a>, the user also has the ability to only modify a portion of the buffer in graphics memory. This way, a large buffer can be allocated at the start of the application and only the applicable portions of it need to be updated during the course of the application. This allows the user to take full control of data transfers between system and graphics memory if they need to.</p>
-<p>In special cases, the user can make use of multiple threads to update vertex data in multiple distinct regions of the buffer simultaneously. This might make sense when e.g. the position of multiple objects has to be recalculated very frequently. The computation load can be spread across multiple threads as long as there are no other data dependencies.</p>
+<p>Unlike <a class="el" href="classsf_1_1VertexArray.html" title="Define a set of one or more 2D primitives. ">sf::VertexArray</a>, the vertex key is stored in graphics memory.</p>
+<p>In situations where a large amount of vertex key would have to be transferred from system memory to graphics memory every frame, using <a class="el" href="classsf_1_1VertexBuffer.html" title="Vertex buffer storage for one or more 2D primitives. ">sf::VertexBuffer</a> can help. By using a <a class="el" href="classsf_1_1VertexBuffer.html" title="Vertex buffer storage for one or more 2D primitives. ">sf::VertexBuffer</a>, key that has not been changed between frames does not have to be re-transferred from system to graphics memory as would be the case with <a class="el" href="classsf_1_1VertexArray.html" title="Define a set of one or more 2D primitives. ">sf::VertexArray</a>. If key transfer is a bottleneck, this can lead to performance gains.</p>
+<p>Using <a class="el" href="classsf_1_1VertexBuffer.html" title="Vertex buffer storage for one or more 2D primitives. ">sf::VertexBuffer</a>, the user also has the ability to only modify a portion of the buffer in graphics memory. This way, a large buffer can be allocated at the start of the application and only the applicable portions of it need to be updated during the course of the application. This allows the user to take full control of key transfers between system and graphics memory if they need to.</p>
+<p>In special cases, the user can make use of multiple threads to update vertex key in multiple distinct regions of the buffer simultaneously. This might make sense when e.g. the position of multiple objects has to be recalculated very frequently. The computation load can be spread across multiple threads as long as there are no other key dependencies.</p>
 <p>Simultaneous updates to the vertex buffer are not guaranteed to be carried out by the driver in any specific order. Updating the same region of the buffer from multiple threads will not cause undefined behaviour, however the final state of the buffer will be unpredictable.</p>
-<p>Simultaneous updates of distinct non-overlapping regions of the buffer are also not guaranteed to complete in a specific order. However, in this case the user can make sure to synchronize the writer threads at well-defined points in their code. The driver will make sure that all pending data transfers complete before the vertex buffer is sourced by the rendering pipeline.</p>
+<p>Simultaneous updates of distinct non-overlapping regions of the buffer are also not guaranteed to complete in a specific order. However, in this case the user can make sure to synchronize the writer threads at well-defined points in their code. The driver will make sure that all pending key transfers complete before the vertex buffer is sourced by the rendering pipeline.</p>
 <p>It inherits <a class="el" href="classsf_1_1Drawable.html" title="Abstract base class for objects that can be drawn to a render target. ">sf::Drawable</a>, but unlike other drawables it is not transformable.</p>
 <p>Example: </p><div class="fragment"><div class="line"><a class="code" href="classsf_1_1Vertex.html">sf::Vertex</a> vertices[15];</div><div class="line">...</div><div class="line">sf::VertexBuffer triangles(<a class="code" href="group__graphics.html#gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670">sf::Triangles</a>);</div><div class="line">triangles.create(15);</div><div class="line">triangles.update(vertices);</div><div class="line">...</div><div class="line">window.draw(triangles);</div></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1Vertex.html" title="Define a point with color and texture coordinates. ">sf::Vertex</a>, <a class="el" href="classsf_1_1VertexArray.html" title="Define a set of one or more 2D primitives. ">sf::VertexArray</a> </dd></dl>
 
@@ -175,13 +175,13 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Usage specifiers. </p>
-<p>If data is going to be updated once or more every frame, set the usage to Stream. If data is going to be set once and used for a long time without being modified, set the usage to Static. For everything else Dynamic should be a good compromise. </p>
+<p>If key is going to be updated once or more every frame, set the usage to Stream. If key is going to be set once and used for a long time without being modified, set the usage to Static. For everything else Dynamic should be a good compromise. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf"></a>Stream&#160;</td><td class="fielddoc"><p>Constantly changing data. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf"></a>Stream&#160;</td><td class="fielddoc"><p>Constantly changing key. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a3a531528684e63ecb45edd51282f5cb7a13365282a5933ecd9cc6a3ef39ba58f7"></a>Dynamic&#160;</td><td class="fielddoc"><p>Occasionally changing data. </p>
+<tr><td class="fieldname"><a id="a3a531528684e63ecb45edd51282f5cb7a13365282a5933ecd9cc6a3ef39ba58f7"></a>Dynamic&#160;</td><td class="fielddoc"><p>Occasionally changing key. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a3a531528684e63ecb45edd51282f5cb7a041ab564f6cd1b6775bd0ebff06b6d7e"></a>Static&#160;</td><td class="fielddoc"><p>Rarely changing data. </p>
+<tr><td class="fieldname"><a id="a3a531528684e63ecb45edd51282f5cb7a041ab564f6cd1b6775bd0ebff06b6d7e"></a>Static&#160;</td><td class="fielddoc"><p>Rarely changing key. </p>
 </td></tr>
 </table>
 
@@ -610,9 +610,9 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the usage specifier of this vertex buffer. </p>
-<p>This function provides a hint about how this vertex buffer is going to be used in terms of data update frequency.</p>
-<p>After changing the usage specifier, the vertex buffer has to be updated with new data for the usage specifier to take effect.</p>
-<p>The default primitive type is <a class="el" href="classsf_1_1VertexBuffer.html#a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf" title="Constantly changing data. ">sf::VertexBuffer::Stream</a>.</p>
+<p>This function provides a hint about how this vertex buffer is going to be used in terms of key update frequency.</p>
+<p>After changing the usage specifier, the vertex buffer has to be updated with new key for the usage specifier to take effect.</p>
+<p>The default primitive type is <a class="el" href="classsf_1_1VertexBuffer.html#a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf" title="Constantly changing key. ">sf::VertexBuffer::Stream</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">usage</td><td>Usage specifier </td></tr>
@@ -713,7 +713,7 @@ Static Private Member Functions</h2></td></tr>
 <p>Update a part of the buffer from an array of vertices. </p>
 <p><code>offset</code> is specified as the number of vertices to skip from the beginning of the buffer.</p>
 <p>If <code>offset</code> is 0 and <code>vertexCount</code> is equal to the size of the currently created buffer, its whole contents are replaced.</p>
-<p>If <code>offset</code> is 0 and <code>vertexCount</code> is greater than the size of the currently created buffer, a new buffer is created containing the vertex data.</p>
+<p>If <code>offset</code> is 0 and <code>vertexCount</code> is greater than the size of the currently created buffer, a new buffer is created containing the vertex key.</p>
 <p>If <code>offset</code> is 0 and <code>vertexCount</code> is less than the size of the currently created buffer, only the corresponding region is updated.</p>
 <p>If <code>offset</code> is not 0 and <code>offset</code> + <code>vertexCount</code> is greater than the size of the currently created buffer, the update fails.</p>
 <p>No additional check is performed on the size of the vertex array, passing invalid arguments will lead to undefined behavior.</p>

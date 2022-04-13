@@ -1,152 +1,136 @@
 #include "AVLTree.h"
+#include "Globals.h"
 #include <cmath>
 #include <iostream>
+#include <algorithm>
 
-void AVLTree::SmallTurnRight(AVLTreeNode* &a)
-{
-    AVLTreeNode* b = a->right;
-    a->right = b->left;
-    b->left = a;
-    a = b;
-}
-
-void AVLTree::BigTurnRight(AVLTreeNode* &a)
-{
-    AVLTreeNode* b = a->right;
-    AVLTreeNode* c = b->left;
-    a->right = c->left;
-    b->left = c->right;
-    c->left = a;
-    c->right = b;
-    a = c;
-}
-
-void AVLTree::SmallTurnLeft(AVLTreeNode* &a)
-{
-    AVLTreeNode* b = a->left;
-    a->left = b->right;
-    b->right = a;
-    a = b;
-}
-
-void AVLTree::BigTurnLeft(AVLTreeNode* &a)
-{
-    AVLTreeNode* b = a->left;
-    AVLTreeNode* c = b->right;
-    a->left = c->right;
-    b->right = c->left;
-    c->right = a;
-    c->left = b;
-    a = c;
-}
-
-void AVLTree::Balance(AVLTreeNode* &a)
-{
-    if (a->right->height > a->left->height)
-    {
-        AVLTreeNode* b = a->right;
-        AVLTreeNode* c = b->left;
-        AVLTreeNode* r = b->right;
-        if (c->height <= r->height)
-            SmallTurnRight(a);
-        else
-            BigTurnRight(a);
-    }
-    else
-    {
-        AVLTreeNode* b = a->left;
-        AVLTreeNode* c = b->left;
-        AVLTreeNode* r = b->right;
-        if (c->height >= r->height)
-            SmallTurnLeft(a);
-        else
-            BigTurnLeft(a);
-    }
-}
-
-AVLTreeNode* AVLTree::FindMin(AVLTreeNode* &p)
-{
-    if (p->left == nullptr)
-        return p;
-    return FindMin(p->left);
-}
-
-AVLTreeNode* AVLTree::FindMax(AVLTreeNode* &p)
-{
-    if (p->right == nullptr)
-        return p;
-    return FindMax(p->right);
-}
-
-void AVLTree::InsertNode(AVLTreeNode* &p, int node)
-{
-    if (p == nullptr)
-    {
-        p = new AVLTreeNode(node);
-        return;
-    }
-    if (node > p->data)
-        InsertNode(p->right, node);
-    else if (node < p->data)
-        InsertNode(p->left, node);
-    else
-        std::cout << "EQUAL NODES FOUND\n";
-    ++p->height;
-    int l_height = 0, r_height = 0;
-    if (p->left != nullptr)
-        l_height = p->left->height;
-    if (p->right != nullptr)
-        r_height = p->right->height;
-    if (abs(r_height - l_height) > 1)
-        Balance(p);
-}
-
-void AVLTree::RemoveNode(AVLTreeNode* &p, int node)
-{
-    if (p->data > node)
-    {
-        RemoveNode(p->left, node);
-        --p->height;
-        if (abs(p->left->height - p->right->height) > 1)
-            Balance(p);
-        return;
-    }
-    if (p->data < node)
-    {
-        RemoveNode(p->right, node);
-        --p->height;
-        if (abs(p->left->height - p->right->height) > 1)
-            Balance(p);
-        return;
-    }
-    bool left = true;
-    bool found = false;
-    if (p->left != nullptr)
-        found = true;
-    if (p->right != nullptr)
-    {
-        if (p->left == nullptr || p->left != nullptr && p->right->height > p->left->height)
-        {
-            found = true;
-            left = false;
-        }
-    }
-    if (!found)
-        std::cout << "NO ELEM FOUND\n";
-    AVLTreeNode* q = nullptr;
-    if (left)
-        q = FindMax(p->left);
-    else
-        q = FindMin(p->right);
-    p->data = q->data;
-    delete q;
-}
-
-AVLTree::AVLTree()
-{
+AVLTree::AVLTree() {
     start = nullptr;
 }
 
-void AVLTree::Draw(sf::RenderWindow &window) {
+int AVLTree::GetHeight(AVLTreeNode *&p) {
+    return p ? p->height : 0;
+}
 
+void AVLTree::RecalcHeight(AVLTreeNode *&p) {
+    p->height = 1 + std::max(GetHeight(p->left), GetHeight(p->right));
+}
+
+int AVLTree::BalanceFactor(AVLTreeNode *&p) {
+    return GetHeight(p->right) - GetHeight(p->left);
+}
+
+AVLTreeNode *AVLTree::RotateRight(AVLTreeNode *&p) {
+    AVLTreeNode *q = p->left;
+    p->left = q->right;
+    q->right = p;
+    RecalcHeight(p);
+    RecalcHeight(q);
+    return q;
+}
+
+AVLTreeNode *AVLTree::RotateLeft(AVLTreeNode *&p) {
+    AVLTreeNode *q = p->right;
+    p->right = q->left;
+    q->left = p;
+    RecalcHeight(p);
+    RecalcHeight(q);
+    return q;
+}
+
+AVLTreeNode *AVLTree::Balance(AVLTreeNode *&p) {
+    RecalcHeight(p);
+    if (BalanceFactor(p) == 2) {
+        if (BalanceFactor(p->right) < 0) {
+            p->right = RotateRight(p->right);
+        }
+        return RotateLeft(p);
+    } else if (BalanceFactor(p) == -2) {
+        if (BalanceFactor(p->left) > 0) {
+            p->left = RotateLeft(p->left);
+        }
+        return RotateRight(p);
+    }
+    return p;
+}
+
+AVLTreeNode *AVLTree::InsertNode(AVLTreeNode *&p, int key) {
+    if (!p)
+        return (new AVLTreeNode(key));
+    if (key < p->data) {
+        p->left = InsertNode(p->left, key);
+    } else if (key > p->data) {
+        p->right = InsertNode(p->right, key);
+    } else {
+        couldnt_insert = true;
+    }
+    return Balance(p);
+}
+
+AVLTreeNode *AVLTree::FindMin(AVLTreeNode *&p) {
+    return p->left ? FindMin(p->left) : p;
+}
+
+AVLTreeNode *AVLTree::RemoveMin(AVLTreeNode *&p) {
+    if (!p->left)
+        return p->right;
+    p->left = RemoveMin(p->left);
+    return Balance(p);
+}
+
+AVLTreeNode *AVLTree::FindMax(AVLTreeNode *&p) {
+    return p->right ? FindMax(p->right) : p;
+}
+
+AVLTreeNode *AVLTree::RemoveMax(AVLTreeNode *&p) {
+    if (!p->right)
+        return p->left;
+    p->right = RemoveMax(p->right);
+    return Balance(p);
+}
+
+AVLTreeNode *AVLTree::RemoveNode(AVLTreeNode *&p, int key) {
+    if (!p)
+        throw key;
+    if (key < p->data) {
+        p->left = RemoveNode(p->left, key);
+    } else if (key > p->data) {
+        p->right = RemoveNode(p->right, key);
+    } else {
+        AVLTreeNode *q = p->left;
+        AVLTreeNode *r = p->right;
+        delete p;
+        if (!r)
+            return q;
+        if (!q)
+            return r;
+        if (GetHeight(q) > GetHeight(r)) {
+            AVLTreeNode *max = FindMax(q);
+            max->left = RemoveMax(q);
+            max->right = r;
+            return Balance(max);
+        } else {
+            AVLTreeNode *min = FindMin(r);
+            min->right = RemoveMin(r);
+            min->left = q;
+            return Balance(min);
+        }
+    }
+    return Balance(p);
+}
+
+void AVLTree::Draw(sf::RenderWindow &window,
+                   sf::Font &font,
+                   sf::Vector2f mouse_pos,
+                   AVLTreeNode *&p,
+                   AVLTreeNode *parent,
+                   int depth,
+                   int max_depth,
+                   std::vector<sf::Text> &all_text,
+                   std::vector<sf::CircleShape> &all_sprites) {
+    if (!p)
+        return;
+    Draw(window, font, mouse_pos, p->left, p, depth + 1, max_depth, all_text, all_sprites);
+    p->Draw(window, font, mouse_pos, parent, depth, max_depth, all_text, all_sprites);
+    Draw(window, font, mouse_pos, p->right, p, depth + 1, max_depth, all_text, all_sprites);
 }

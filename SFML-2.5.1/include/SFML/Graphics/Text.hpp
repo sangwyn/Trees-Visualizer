@@ -433,7 +433,7 @@ private:
     void ensureGeometryUpdate() const;
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     String              m_string;              ///< String to display
     const Font*         m_font;                ///< Font used to display the string
@@ -481,7 +481,7 @@ private:
 /// and better performances: indeed a sf::Font is a heavy resource,
 /// and any operation on it is slow (often too slow for real-time
 /// applications). On the other side, a sf::Text is a lightweight
-/// object which can combine the glyphs data and metrics of a sf::Font
+/// object which can combine the glyphs key and metrics of a sf::Font
 /// to display any text on a render target.
 ///
 /// It is important to note that the sf::Text instance doesn't

@@ -12,6 +12,9 @@ class Textbox {
   bool is_selected = false;
   int max_lines;
   int current_lines = 1;
+  sf::Vector2f pos;
+  sf::Vector2f size;
+  float text_size = 30;
  public:
   Textbox(const sf::Font &font,
           sf::Vector2f pos,

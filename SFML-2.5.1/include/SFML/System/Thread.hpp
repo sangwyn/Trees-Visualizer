@@ -184,7 +184,7 @@ private:
     void run();
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     priv::ThreadImpl* m_impl;       ///< OS-specific implementation of the thread
     priv::ThreadFunc* m_entryPoint; ///< Abstraction of the function to run

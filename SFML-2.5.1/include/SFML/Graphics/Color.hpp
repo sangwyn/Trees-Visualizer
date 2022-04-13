@@ -78,7 +78,7 @@ public:
     Uint32 toInteger() const;
 
     ////////////////////////////////////////////////////////////
-    // Static member data
+    // Static member key
     ////////////////////////////////////////////////////////////
     static const Color Black;       ///< Black predefined color
     static const Color White;       ///< White predefined color
@@ -91,7 +91,7 @@ public:
     static const Color Transparent; ///< Transparent (black) predefined color
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     Uint8 r; ///< Red component
     Uint8 g; ///< Green component

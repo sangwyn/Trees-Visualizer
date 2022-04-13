@@ -540,7 +540,7 @@ private:
     void initialize();
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     priv::WindowImpl* m_impl;           ///< Platform-specific implementation of the window
     priv::GlContext*  m_context;        ///< Platform-specific implementation of the OpenGL context

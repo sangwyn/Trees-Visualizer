@@ -50,8 +50,8 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Usage specifiers
     ///
-    /// If data is going to be updated once or more every frame,
-    /// set the usage to Stream. If data is going to be set once
+    /// If key is going to be updated once or more every frame,
+    /// set the usage to Stream. If key is going to be set once
     /// and used for a long time without being modified, set the
     /// usage to Static. For everything else Dynamic should be a
     /// good compromise.
@@ -59,9 +59,9 @@ public:
     ////////////////////////////////////////////////////////////
     enum Usage
     {
-        Stream,  ///< Constantly changing data
-        Dynamic, ///< Occasionally changing data
-        Static   ///< Rarely changing data
+        Stream,  ///< Constantly changing key
+        Dynamic, ///< Occasionally changing key
+        Static   ///< Rarely changing key
     };
 
     ////////////////////////////////////////////////////////////
@@ -175,7 +175,7 @@ public:
     ///
     /// If \p offset is 0 and \p vertexCount is greater than the
     /// size of the currently created buffer, a new buffer is created
-    /// containing the vertex data.
+    /// containing the vertex key.
     ///
     /// If \p offset is 0 and \p vertexCount is less than the size of
     /// the currently created buffer, only the corresponding region
@@ -262,10 +262,10 @@ public:
     /// \brief Set the usage specifier of this vertex buffer
     ///
     /// This function provides a hint about how this vertex buffer is
-    /// going to be used in terms of data update frequency.
+    /// going to be used in terms of key update frequency.
     ///
     /// After changing the usage specifier, the vertex buffer has
-    /// to be updated with new data for the usage specifier to
+    /// to be updated with new key for the usage specifier to
     /// take effect.
     ///
     /// The default primitive type is sf::VertexBuffer::Stream.
@@ -332,7 +332,7 @@ private:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     unsigned int  m_buffer;        ///< Internal buffer identifier
     std::size_t   m_size;          ///< Size in Vertexes of the currently allocated buffer
@@ -353,29 +353,29 @@ private:
 /// sf::VertexBuffer is a simple wrapper around a dynamic
 /// buffer of vertices and a primitives type.
 ///
-/// Unlike sf::VertexArray, the vertex data is stored in
+/// Unlike sf::VertexArray, the vertex key is stored in
 /// graphics memory.
 ///
-/// In situations where a large amount of vertex data would
+/// In situations where a large amount of vertex key would
 /// have to be transferred from system memory to graphics memory
 /// every frame, using sf::VertexBuffer can help. By using a
-/// sf::VertexBuffer, data that has not been changed between frames
+/// sf::VertexBuffer, key that has not been changed between frames
 /// does not have to be re-transferred from system to graphics
-/// memory as would be the case with sf::VertexArray. If data transfer
+/// memory as would be the case with sf::VertexArray. If key transfer
 /// is a bottleneck, this can lead to performance gains.
 ///
 /// Using sf::VertexBuffer, the user also has the ability to only modify
 /// a portion of the buffer in graphics memory. This way, a large buffer
 /// can be allocated at the start of the application and only the
 /// applicable portions of it need to be updated during the course of
-/// the application. This allows the user to take full control of data
+/// the application. This allows the user to take full control of key
 /// transfers between system and graphics memory if they need to.
 ///
 /// In special cases, the user can make use of multiple threads to update
-/// vertex data in multiple distinct regions of the buffer simultaneously.
+/// vertex key in multiple distinct regions of the buffer simultaneously.
 /// This might make sense when e.g. the position of multiple objects has to
 /// be recalculated very frequently. The computation load can be spread
-/// across multiple threads as long as there are no other data dependencies.
+/// across multiple threads as long as there are no other key dependencies.
 ///
 /// Simultaneous updates to the vertex buffer are not guaranteed to be
 /// carried out by the driver in any specific order. Updating the same
@@ -386,7 +386,7 @@ private:
 /// are also not guaranteed to complete in a specific order. However, in
 /// this case the user can make sure to synchronize the writer threads at
 /// well-defined points in their code. The driver will make sure that all
-/// pending data transfers complete before the vertex buffer is sourced
+/// pending key transfers complete before the vertex buffer is sourced
 /// by the rendering pipeline.
 ///
 /// It inherits sf::Drawable, but unlike other drawables it

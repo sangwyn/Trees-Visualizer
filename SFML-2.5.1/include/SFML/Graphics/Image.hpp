@@ -111,8 +111,8 @@ public:
     /// like progressive jpeg.
     /// If this function fails, the image is left unchanged.
     ///
-    /// \param data Pointer to the file data in memory
-    /// \param size Size of the data to load, in bytes
+    /// \param data Pointer to the file key in memory
+    /// \param size Size of the key to load, in bytes
     ///
     /// \return True if loading was successful
     ///
@@ -261,7 +261,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     Vector2u           m_size;   ///< Image size
     std::vector<Uint8> m_pixels; ///< Pixels of the image

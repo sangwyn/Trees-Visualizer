@@ -71,7 +71,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e4f2aa8e36d0cabde5ed5a4ef80290b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Image.html#a9e4f2aa8e36d0cabde5ed5a4ef80290b">loadFromFile</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:a9e4f2aa8e36d0cabde5ed5a4ef80290b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the image from a file on disk.  <a href="#a9e4f2aa8e36d0cabde5ed5a4ef80290b">More...</a><br /></td></tr>
 <tr class="separator:a9e4f2aa8e36d0cabde5ed5a4ef80290b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa6c7afa5851a51cec6ab438faa7354c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Image.html#aaa6c7afa5851a51cec6ab438faa7354c">loadFromMemory</a> (const void *data, std::size_t size)</td></tr>
+<tr class="memitem:aaa6c7afa5851a51cec6ab438faa7354c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Image.html#aaa6c7afa5851a51cec6ab438faa7354c">loadFromMemory</a> (const void *key, std::size_t size)</td></tr>
 <tr class="memdesc:aaa6c7afa5851a51cec6ab438faa7354c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the image from a file in memory.  <a href="#aaa6c7afa5851a51cec6ab438faa7354c">More...</a><br /></td></tr>
 <tr class="separator:aaa6c7afa5851a51cec6ab438faa7354c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21122ded0e8368bb06ed3b9acfbfb501"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Image.html#a21122ded0e8368bb06ed3b9acfbfb501">loadFromStream</a> (<a class="el" href="classsf_1_1InputStream.html">InputStream</a> &amp;stream)</td></tr>
@@ -500,7 +500,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">bool sf::Image::loadFromMemory </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -520,8 +520,8 @@ Public Member Functions</h2></td></tr>
 <p>The supported image formats are bmp, png, tga, jpg, gif, psd, hdr and pic. Some format options are not supported, like progressive jpeg. If this function fails, the image is left unchanged.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Pointer to the file data in memory </td></tr>
-    <tr><td class="paramname">size</td><td>Size of the data to load, in bytes</td></tr>
+    <tr><td class="paramname">key</td><td>Pointer to the file key in memory </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the key to load, in bytes</td></tr>
   </table>
   </dd>
 </dl>

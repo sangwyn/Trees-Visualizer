@@ -303,7 +303,7 @@ private:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     const Texture* m_texture;          ///< Texture of the shape
     IntRect        m_textureRect;      ///< Rectangle defining the area of the source texture to display

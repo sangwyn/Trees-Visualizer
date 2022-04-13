@@ -213,7 +213,7 @@ private:
     void updateTexCoords();
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     Vertex         m_vertices[4]; ///< Vertices defining the sprite's geometry
     const Texture* m_texture;     ///< Texture of the sprite
@@ -240,13 +240,13 @@ private:
 /// sprite, or to get its bounding rectangle.
 ///
 /// sf::Sprite works in combination with the sf::Texture class, which
-/// loads and provides the pixel data of a given texture.
+/// loads and provides the pixel key of a given texture.
 ///
 /// The separation of sf::Sprite and sf::Texture allows more flexibility
 /// and better performances: indeed a sf::Texture is a heavy resource,
 /// and any operation on it is slow (often too slow for real-time
 /// applications). On the other side, a sf::Sprite is a lightweight
-/// object which can use the pixel data of a sf::Texture and draw
+/// object which can use the pixel key of a sf::Texture and draw
 /// it with its own transformation/color/blending attributes.
 ///
 /// It is important to note that the sf::Sprite instance doesn't

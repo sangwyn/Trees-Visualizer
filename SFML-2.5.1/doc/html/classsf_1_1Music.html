@@ -99,7 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3edc66e5f5b3f11e84b90eaec9c7d7c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Music.html#a3edc66e5f5b3f11e84b90eaec9c7d7c0">openFromFile</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:a3edc66e5f5b3f11e84b90eaec9c7d7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a music from an audio file.  <a href="#a3edc66e5f5b3f11e84b90eaec9c7d7c0">More...</a><br /></td></tr>
 <tr class="separator:a3edc66e5f5b3f11e84b90eaec9c7d7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae93b21bcf28ff0b5fec458039111386e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Music.html#ae93b21bcf28ff0b5fec458039111386e">openFromMemory</a> (const void *data, std::size_t sizeInBytes)</td></tr>
+<tr class="memitem:ae93b21bcf28ff0b5fec458039111386e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Music.html#ae93b21bcf28ff0b5fec458039111386e">openFromMemory</a> (const void *key, std::size_t sizeInBytes)</td></tr>
 <tr class="memdesc:ae93b21bcf28ff0b5fec458039111386e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a music from an audio file in memory.  <a href="#ae93b21bcf28ff0b5fec458039111386e">More...</a><br /></td></tr>
 <tr class="separator:ae93b21bcf28ff0b5fec458039111386e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e55d1910a26858b44778c26b237d673"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Music.html#a4e55d1910a26858b44778c26b237d673">openFromStream</a> (<a class="el" href="classsf_1_1InputStream.html">InputStream</a> &amp;stream)</td></tr>
@@ -192,7 +192,7 @@ Protected Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aca1bcb4e5d56a854133e74bd86374463"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Music.html#aca1bcb4e5d56a854133e74bd86374463">onGetData</a> (<a class="el" href="structsf_1_1SoundStream_1_1Chunk.html">Chunk</a> &amp;data)</td></tr>
+<tr class="memitem:aca1bcb4e5d56a854133e74bd86374463"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Music.html#aca1bcb4e5d56a854133e74bd86374463">onGetData</a> (<a class="el" href="structsf_1_1SoundStream_1_1Chunk.html">Chunk</a> &amp;key)</td></tr>
 <tr class="memdesc:aca1bcb4e5d56a854133e74bd86374463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a new chunk of audio samples from the stream source.  <a href="#aca1bcb4e5d56a854133e74bd86374463">More...</a><br /></td></tr>
 <tr class="separator:aca1bcb4e5d56a854133e74bd86374463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15119cc0419c16bb334fa0698699c02e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Music.html#a15119cc0419c16bb334fa0698699c02e">onSeek</a> (<a class="el" href="classsf_1_1Time.html">Time</a> timeOffset)</td></tr>
@@ -744,7 +744,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname">virtual bool sf::Music::onGetData </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structsf_1_1SoundStream_1_1Chunk.html">Chunk</a> &amp;&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -759,7 +759,7 @@ Protected Attributes</h2></td></tr>
 <p>This function fills the chunk from the next samples to read from the audio file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Chunk of data to fill</td></tr>
+    <tr><td class="paramname">key</td><td>Chunk of key to fill</td></tr>
   </table>
   </dd>
 </dl>
@@ -876,7 +876,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname">bool sf::Music::openFromMemory </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -894,11 +894,11 @@ Protected Attributes</h2></td></tr>
 
 <p>Open a music from an audio file in memory. </p>
 <p>This function doesn't start playing the music (call <a class="el" href="classsf_1_1SoundStream.html#afdc08b69cab5f243d9324940a85a1144" title="Start or resume playing the audio stream. ">play()</a> to do so). See the documentation of <a class="el" href="classsf_1_1InputSoundFile.html" title="Provide read access to sound files. ">sf::InputSoundFile</a> for the list of supported formats.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Since the music is not loaded at once but rather streamed continuously, the <em>data</em> buffer must remain accessible until the <a class="el" href="classsf_1_1Music.html" title="Streamed music played from an audio file. ">sf::Music</a> object loads a new music or is destroyed. That is, you can't deallocate the buffer right after calling this function.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Since the music is not loaded at once but rather streamed continuously, the <em>key</em> buffer must remain accessible until the <a class="el" href="classsf_1_1Music.html" title="Streamed music played from an audio file. ">sf::Music</a> object loads a new music or is destroyed. That is, you can't deallocate the buffer right after calling this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Pointer to the file data in memory </td></tr>
-    <tr><td class="paramname">sizeInBytes</td><td>Size of the data to load, in bytes</td></tr>
+    <tr><td class="paramname">key</td><td>Pointer to the file key in memory </td></tr>
+    <tr><td class="paramname">sizeInBytes</td><td>Size of the key to load, in bytes</td></tr>
   </table>
   </dd>
 </dl>

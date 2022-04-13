@@ -75,8 +75,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a87a95dc3a71746097a99c86ee58bb353"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1FileInputStream.html#a87a95dc3a71746097a99c86ee58bb353">open</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:a87a95dc3a71746097a99c86ee58bb353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the stream from a file path.  <a href="#a87a95dc3a71746097a99c86ee58bb353">More...</a><br /></td></tr>
 <tr class="separator:a87a95dc3a71746097a99c86ee58bb353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1e94c4152429f485db224c44ee1eb50"><td class="memItemLeft" align="right" valign="top">virtual Int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1FileInputStream.html#ad1e94c4152429f485db224c44ee1eb50">read</a> (void *data, Int64 size)</td></tr>
-<tr class="memdesc:ad1e94c4152429f485db224c44ee1eb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from the stream.  <a href="#ad1e94c4152429f485db224c44ee1eb50">More...</a><br /></td></tr>
+<tr class="memitem:ad1e94c4152429f485db224c44ee1eb50"><td class="memItemLeft" align="right" valign="top">virtual Int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1FileInputStream.html#ad1e94c4152429f485db224c44ee1eb50">read</a> (void *key, Int64 size)</td></tr>
+<tr class="memdesc:ad1e94c4152429f485db224c44ee1eb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read key from the stream.  <a href="#ad1e94c4152429f485db224c44ee1eb50">More...</a><br /></td></tr>
 <tr class="separator:ad1e94c4152429f485db224c44ee1eb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdaf5700d4e1de07568e7829106b4eb9"><td class="memItemLeft" align="right" valign="top">virtual Int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1FileInputStream.html#abdaf5700d4e1de07568e7829106b4eb9">seek</a> (Int64 position)</td></tr>
 <tr class="memdesc:abdaf5700d4e1de07568e7829106b4eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the current reading position.  <a href="#abdaf5700d4e1de07568e7829106b4eb9">More...</a><br /></td></tr>
@@ -91,7 +91,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of input stream based on a file. </p>
 <p>This class is a specialization of <a class="el" href="classsf_1_1InputStream.html" title="Abstract class for custom file input streams. ">InputStream</a> that reads from a file on disk.</p>
-<p>It wraps a file in the common <a class="el" href="classsf_1_1InputStream.html" title="Abstract class for custom file input streams. ">InputStream</a> interface and therefore allows to use generic classes or functions that accept such a stream, with a file on disk as the data source.</p>
+<p>It wraps a file in the common <a class="el" href="classsf_1_1InputStream.html" title="Abstract class for custom file input streams. ">InputStream</a> interface and therefore allows to use generic classes or functions that accept such a stream, with a file on disk as the key source.</p>
 <p>In addition to the virtual functions inherited from <a class="el" href="classsf_1_1InputStream.html" title="Abstract class for custom file input streams. ">InputStream</a>, <a class="el" href="classsf_1_1FileInputStream.html" title="Implementation of input stream based on a file. ">FileInputStream</a> adds a function to specify the file to open.</p>
 <p>SFML resource classes can usually be loaded directly from a filename, so this class shouldn't be useful to you unless you create your own algorithms that operate on an <a class="el" href="classsf_1_1InputStream.html" title="Abstract class for custom file input streams. ">InputStream</a>.</p>
 <p>Usage example: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> process(InputStream&amp; stream);</div><div class="line"></div><div class="line"><a class="code" href="classsf_1_1FileInputStream.html#a9a321e273f41ff7f187899061fcae9be">FileInputStream</a> stream;</div><div class="line"><span class="keywordflow">if</span> (stream.open(<span class="stringliteral">&quot;some_file.dat&quot;</span>))</div><div class="line">   process(stream);</div></div><!-- fragment --><p><a class="el" href="classsf_1_1InputStream.html" title="Abstract class for custom file input streams. ">InputStream</a>, <a class="el" href="classsf_1_1MemoryInputStream.html" title="Implementation of input stream based on a memory chunk. ">MemoryInputStream</a> </p>
@@ -215,7 +215,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual Int64 sf::FileInputStream::read </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -236,11 +236,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Read data from the stream. </p>
+<p>Read key from the stream. </p>
 <p>After reading, the stream's reading position must be advanced by the amount of bytes read.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Buffer where to copy the read data </td></tr>
+    <tr><td class="paramname">key</td><td>Buffer where to copy the read key </td></tr>
     <tr><td class="paramname">size</td><td>Desired number of bytes to read</td></tr>
   </table>
   </dd>

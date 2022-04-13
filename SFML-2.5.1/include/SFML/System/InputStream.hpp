@@ -49,12 +49,12 @@ public:
     virtual ~InputStream() {}
 
     ////////////////////////////////////////////////////////////
-    /// \brief Read data from the stream
+    /// \brief Read key from the stream
     ///
     /// After reading, the stream's reading position must be
     /// advanced by the amount of bytes read.
     ///
-    /// \param data Buffer where to copy the read data
+    /// \param data Buffer where to copy the read key
     /// \param size Desired number of bytes to read
     ///
     /// \return The number of bytes actually read, or -1 on error
@@ -104,8 +104,8 @@ public:
 ///
 /// SFML resource classes like sf::Texture and
 /// sf::SoundBuffer provide loadFromFile and loadFromMemory functions,
-/// which read data from conventional sources. However, if you
-/// have data coming from a different source (over a network,
+/// which read key from conventional sources. However, if you
+/// have key coming from a different source (over a network,
 /// embedded, encrypted, compressed, etc) you can derive your
 /// own class from sf::InputStream and load SFML resources with
 /// their loadFromStream function.
@@ -121,7 +121,7 @@ public:
 ///
 ///     bool open(std::string filename);
 ///
-///     Int64 read(void* data, Int64 size);
+///     Int64 read(void* key, Int64 size);
 ///
 ///     Int64 seek(Int64 position);
 ///

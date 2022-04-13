@@ -78,12 +78,12 @@ public:
     bool open(const std::string& filename);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Read data from the stream
+    /// \brief Read key from the stream
     ///
     /// After reading, the stream's reading position must be
     /// advanced by the amount of bytes read.
     ///
-    /// \param data Buffer where to copy the read data
+    /// \param data Buffer where to copy the read key
     /// \param size Desired number of bytes to read
     ///
     /// \return The number of bytes actually read, or -1 on error
@@ -120,7 +120,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
 #ifdef SFML_SYSTEM_ANDROID
     priv::ResourceStream* m_file;
@@ -144,7 +144,7 @@ private:
 ///
 /// It wraps a file in the common InputStream interface
 /// and therefore allows to use generic classes or functions
-/// that accept such a stream, with a file on disk as the data
+/// that accept such a stream, with a file on disk as the key
 /// source.
 ///
 /// In addition to the virtual functions inherited from

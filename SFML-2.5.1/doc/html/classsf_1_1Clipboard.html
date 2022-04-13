@@ -57,10 +57,10 @@
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c385cc2b6d78a3d0cfa29928a7d6eb8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classsf_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Clipboard.html#a3c385cc2b6d78a3d0cfa29928a7d6eb8">getString</a> ()</td></tr>
-<tr class="memdesc:a3c385cc2b6d78a3d0cfa29928a7d6eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the content of the clipboard as string data.  <a href="#a3c385cc2b6d78a3d0cfa29928a7d6eb8">More...</a><br /></td></tr>
+<tr class="memdesc:a3c385cc2b6d78a3d0cfa29928a7d6eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the content of the clipboard as string key.  <a href="#a3c385cc2b6d78a3d0cfa29928a7d6eb8">More...</a><br /></td></tr>
 <tr class="separator:a3c385cc2b6d78a3d0cfa29928a7d6eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c597c2165d3ca3a89c17f31ff7413d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Clipboard.html#a29c597c2165d3ca3a89c17f31ff7413d">setString</a> (const <a class="el" href="classsf_1_1String.html">String</a> &amp;text)</td></tr>
-<tr class="memdesc:a29c597c2165d3ca3a89c17f31ff7413d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the content of the clipboard as string data.  <a href="#a29c597c2165d3ca3a89c17f31ff7413d">More...</a><br /></td></tr>
+<tr class="memdesc:a29c597c2165d3ca3a89c17f31ff7413d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the content of the clipboard as string key.  <a href="#a29c597c2165d3ca3a89c17f31ff7413d">More...</a><br /></td></tr>
 <tr class="separator:a29c597c2165d3ca3a89c17f31ff7413d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -94,7 +94,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the content of the clipboard as string data. </p>
+<p>Get the content of the clipboard as string key. </p>
 <p>This function returns the content of the clipboard as a string. If the clipboard does not contain string it returns an empty <a class="el" href="classsf_1_1String.html" title="Utility string class that automatically handles conversions between types and encodings. ">sf::String</a> object.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classsf_1_1Clipboard.html" title="Give access to the system clipboard. ">Clipboard</a> contents as <a class="el" href="classsf_1_1String.html" title="Utility string class that automatically handles conversions between types and encodings. ">sf::String</a> object </dd></dl>
 
@@ -124,12 +124,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the content of the clipboard as string data. </p>
+<p>Set the content of the clipboard as string key. </p>
 <p>This function sets the content of the clipboard as a string.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Due to limitations on some operating systems, setting the clipboard contents is only guaranteed to work if there is currently an open window for which events are being handled.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td><a class="el" href="classsf_1_1String.html" title="Utility string class that automatically handles conversions between types and encodings. ">sf::String</a> containing the data to be sent to the clipboard </td></tr>
+    <tr><td class="paramname">text</td><td><a class="el" href="classsf_1_1String.html" title="Utility string class that automatically handles conversions between types and encodings. ">sf::String</a> containing the key to be sent to the clipboard </td></tr>
   </table>
   </dd>
 </dl>

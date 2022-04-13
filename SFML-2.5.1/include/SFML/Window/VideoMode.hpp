@@ -97,7 +97,7 @@ public:
     bool isValid() const;
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     unsigned int width;        ///< Video mode width, in pixels
     unsigned int height;       ///< Video mode height, in pixels

@@ -9,6 +9,8 @@ class Button {
   sf::RectangleShape rect;
   sf::Text text_inside;
   bool is_selected = false;
+  bool text_selected = false;
+  sf::Vector2f pos;
  public:
   Button(sf::Vector2f pos, sf::Font font, sf::String text);
   bool MouseOver(sf::Vector2f mouse_pos);
@@ -17,7 +19,9 @@ class Button {
   void Draw(sf::RenderWindow &window);
   float GetWidth();
   float GetHeight();
+  void SetTextSelection(bool select);
   sf::Vector2f GetPos();
+  void SetPos(sf::Vector2f pos);
 };
 
 #endif

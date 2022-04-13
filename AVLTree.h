@@ -6,18 +6,29 @@
 
 class AVLTree {
  private:
-  void SmallTurnRight(AVLTreeNode *&a);
-  void BigTurnRight(AVLTreeNode *&a);
-  void SmallTurnLeft(AVLTreeNode *&a);
-  void BigTurnLeft(AVLTreeNode *&a);
-  void Balance(AVLTreeNode *&a);
+  int GetHeight(AVLTreeNode *&p);
+  void RecalcHeight(AVLTreeNode *&p);
+  int BalanceFactor(AVLTreeNode *&p);
+  AVLTreeNode *RotateRight(AVLTreeNode *&p);
+  AVLTreeNode *RotateLeft(AVLTreeNode *&p);
+  AVLTreeNode *Balance(AVLTreeNode *&p);
+  AVLTreeNode *FindMin(AVLTreeNode *&p);
+  AVLTreeNode *RemoveMin(AVLTreeNode *&p);
+  AVLTreeNode *FindMax(AVLTreeNode *&p);
+  AVLTreeNode *RemoveMax(AVLTreeNode *&p);
  public:
   AVLTreeNode *start;
-  AVLTreeNode *FindMin(AVLTreeNode *&p);
-  AVLTreeNode *FindMax(AVLTreeNode *&p);
-  void InsertNode(AVLTreeNode *&p, int node);
-  void RemoveNode(AVLTreeNode *&p, int node);
-  void Draw(sf::RenderWindow &window);
+  AVLTreeNode *InsertNode(AVLTreeNode *&p, int key);
+  AVLTreeNode *RemoveNode(AVLTreeNode *&p, int key);
+  void Draw(sf::RenderWindow &window,
+            sf::Font &font,
+            sf::Vector2f mouse_pos,
+            AVLTreeNode *&p,
+            AVLTreeNode *parent,
+            int depth,
+            int max_depth,
+            std::vector<sf::Text> &all_text,
+            std::vector<sf::CircleShape> &all_sprites);
   AVLTree();
 };
 

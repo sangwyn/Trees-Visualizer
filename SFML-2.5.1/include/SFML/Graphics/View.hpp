@@ -267,7 +267,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     Vector2f          m_center;              ///< Center of the view, in scene coordinates
     Vector2f          m_size;                ///< Size of the view, in scene coordinates

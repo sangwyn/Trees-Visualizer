@@ -51,21 +51,21 @@ public:
     MemoryInputStream();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open the stream from its data
+    /// \brief Open the stream from its key
     ///
-    /// \param data        Pointer to the data in memory
-    /// \param sizeInBytes Size of the data, in bytes
+    /// \param data        Pointer to the key in memory
+    /// \param sizeInBytes Size of the key, in bytes
     ///
     ////////////////////////////////////////////////////////////
     void open(const void* data, std::size_t sizeInBytes);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Read data from the stream
+    /// \brief Read key from the stream
     ///
     /// After reading, the stream's reading position must be
     /// advanced by the amount of bytes read.
     ///
-    /// \param data Buffer where to copy the read data
+    /// \param data Buffer where to copy the read key
     /// \param size Desired number of bytes to read
     ///
     /// \return The number of bytes actually read, or -1 on error
@@ -102,10 +102,10 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
-    const char* m_data;   ///< Pointer to the data in memory
-    Int64       m_size;   ///< Total size of the data
+    const char* m_data;   ///< Pointer to the key in memory
+    Int64       m_size;   ///< Total size of the key
     Int64       m_offset; ///< Current reading position
 };
 
@@ -120,7 +120,7 @@ private:
 /// \ingroup system
 ///
 /// This class is a specialization of InputStream that
-/// reads from data in memory.
+/// reads from key in memory.
 ///
 /// It wraps a memory chunk in the common InputStream interface
 /// and therefore allows to use generic classes or functions
@@ -128,7 +128,7 @@ private:
 ///
 /// In addition to the virtual functions inherited from
 /// InputStream, MemoryInputStream adds a function to
-/// specify the pointer and size of the data in memory.
+/// specify the pointer and size of the key in memory.
 ///
 /// SFML resource classes can usually be loaded directly from
 /// memory, so this class shouldn't be useful to you unless

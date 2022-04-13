@@ -163,11 +163,11 @@ public:
     bool isRepeated() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Generate a mipmap using the current texture data
+    /// \brief Generate a mipmap using the current texture key
     ///
     /// This function is similar to Texture::generateMipmap and operates
     /// on the texture used as the target for drawing.
-    /// Be aware that any draw operation may modify the base level image data.
+    /// Be aware that any draw operation may modify the base level image key.
     /// For this reason, calling this function only makes sense after all
     /// drawing is completed and display has been called. Not calling display
     /// after subsequent drawing will lead to undefined behavior if a mipmap
@@ -236,7 +236,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     priv::RenderTextureImpl* m_impl;    ///< Platform/hardware specific implementation
     Texture                  m_texture; ///< Target texture to draw on

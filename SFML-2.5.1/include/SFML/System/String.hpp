@@ -53,7 +53,7 @@ public:
     typedef std::basic_string<Uint32>::const_iterator ConstIterator; ///< Read-only iterator type
 
     ////////////////////////////////////////////////////////////
-    // Static member data
+    // Static member key
     ////////////////////////////////////////////////////////////
     static const std::size_t InvalidPos; ///< Represents an invalid position in the string
 
@@ -522,7 +522,7 @@ private:
     friend SFML_SYSTEM_API bool operator <(const String& left, const String& right);
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     std::basic_string<Uint32> m_string; ///< Internal string of UTF-32 characters
 };

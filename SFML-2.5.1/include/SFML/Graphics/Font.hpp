@@ -95,7 +95,7 @@ public:
     /// fonts installed on the user's system, thus you can't
     /// load them directly.
     ///
-    /// \warning SFML cannot preload all the font data in this
+    /// \warning SFML cannot preload all the font key in this
     /// function, so the file has to remain accessible until
     /// the sf::Font object loads a new font or is destroyed.
     ///
@@ -114,13 +114,13 @@ public:
     /// The supported font formats are: TrueType, Type 1, CFF,
     /// OpenType, SFNT, X11 PCF, Windows FNT, BDF, PFR and Type 42.
     ///
-    /// \warning SFML cannot preload all the font data in this
-    /// function, so the buffer pointed by \a data has to remain
+    /// \warning SFML cannot preload all the font key in this
+    /// function, so the buffer pointed by \a key has to remain
     /// valid until the sf::Font object loads a new font or
     /// is destroyed.
     ///
-    /// \param data        Pointer to the file data in memory
-    /// \param sizeInBytes Size of the data to load, in bytes
+    /// \param data        Pointer to the file key in memory
+    /// \param sizeInBytes Size of the key to load, in bytes
     ///
     /// \return True if loading succeeded, false if it failed
     ///
@@ -134,11 +134,11 @@ public:
     ///
     /// The supported font formats are: TrueType, Type 1, CFF,
     /// OpenType, SFNT, X11 PCF, Windows FNT, BDF, PFR and Type 42.
-    /// Warning: SFML cannot preload all the font data in this
+    /// Warning: SFML cannot preload all the font key in this
     /// function, so the contents of \a stream have to remain
     /// valid as long as the font is used.
     ///
-    /// \warning SFML cannot preload all the font data in this
+    /// \warning SFML cannot preload all the font key in this
     /// function, so the stream has to remain accessible until
     /// the sf::Font object loads a new font or is destroyed.
     ///
@@ -344,7 +344,7 @@ private:
     typedef std::map<unsigned int, Page> PageTable; ///< Table mapping a character size to its page (texture)
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     void*                      m_library;     ///< Pointer to the internal library interface (it is typeless to avoid exposing implementation details)
     void*                      m_face;        ///< Pointer to the internal font face (it is typeless to avoid exposing implementation details)
@@ -379,7 +379,7 @@ private:
 /// \li Per-glyph metrics, such as bounding box or kerning
 /// \li Pixel representation of glyphs
 ///
-/// Fonts alone are not very useful: they hold the font data
+/// Fonts alone are not very useful: they hold the font key
 /// but cannot make anything useful of it. To do so you need to
 /// use the sf::Text class, which is able to properly output text
 /// with several options such as character size, style, color,
@@ -388,7 +388,7 @@ private:
 /// indeed a sf::Font is a heavy resource, and any operation on it
 /// is slow (often too slow for real-time applications). On the other
 /// side, a sf::Text is a lightweight object which can combine the
-/// glyphs data and metrics of a sf::Font to display any text on a
+/// glyphs key and metrics of a sf::Font to display any text on a
 /// render target.
 /// Note that it is also possible to bind several sf::Text instances
 /// to the same sf::Font.

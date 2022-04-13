@@ -92,7 +92,7 @@ public:
     Vertex(const Vector2f& thePosition, const Color& theColor, const Vector2f& theTexCoords);
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     Vector2f  position;  ///< 2D position of the vertex
     Color     color;     ///< Color of the vertex

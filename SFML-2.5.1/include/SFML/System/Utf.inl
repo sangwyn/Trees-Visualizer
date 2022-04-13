@@ -38,7 +38,7 @@
 template <typename In>
 In Utf<8>::decode(In begin, In end, Uint32& output, Uint32 replacement)
 {
-    // Some useful precomputed data
+    // Some useful precomputed key
     static const int trailing[256] =
     {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -86,7 +86,7 @@ In Utf<8>::decode(In begin, In end, Uint32& output, Uint32 replacement)
 template <typename Out>
 Out Utf<8>::encode(Uint32 input, Out output, Uint8 replacement)
 {
-    // Some useful precomputed data
+    // Some useful precomputed key
     static const Uint8 firstBytes[7] =
     {
         0x00, 0x00, 0xC0, 0xE0, 0xF0, 0xF8, 0xFC

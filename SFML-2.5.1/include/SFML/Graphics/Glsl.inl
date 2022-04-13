@@ -55,7 +55,7 @@ template <std::size_t Columns, std::size_t Rows>
 struct Matrix
 {
     ////////////////////////////////////////////////////////////
-    /// \brief Construct from raw data
+    /// \brief Construct from raw key
     ///
     /// \param pointer Points to the beginning of an array that
     ///                has the size of the matrix. The elements
@@ -81,7 +81,7 @@ struct Matrix
         copyMatrix(transform, *this);
     }
 
-    float array[Columns * Rows]; ///< Array holding matrix data
+    float array[Columns * Rows]; ///< Array holding matrix key
 };
 
 ////////////////////////////////////////////////////////////

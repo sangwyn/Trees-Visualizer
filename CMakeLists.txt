@@ -10,5 +10,5 @@ set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR "SFML-2.5.1/lib/cmake/SFML")
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
-add_executable(treesSFML main.cpp AVLTree.cpp AVLTree.h AVLTreeNode.cpp AVLTreeNode.h TreeManager.cpp TreeManager.h Globals.h Globals.cpp Button.cpp Button.h Textbox.cpp Textbox.h)
+add_executable(treesSFML main.cpp AVLTree.cpp AVLTree.h AVLTreeNode.cpp AVLTreeNode.h TreeManager.cpp TreeManager.h Globals.h Globals.cpp Button.cpp Button.h Textbox.cpp Textbox.h RBTree.cpp RBTree.h RBTreeNode.cpp RBTreeNode.h Treap.cpp Treap.h TreapNode.cpp TreapNode.h SplayTree.cpp SplayTree.h SplayTreeNode.cpp SplayTreeNode.h)
 target_link_libraries(treesSFML sfml-graphics sfml-audio)

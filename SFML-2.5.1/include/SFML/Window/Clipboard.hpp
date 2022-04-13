@@ -43,7 +43,7 @@ class SFML_WINDOW_API Clipboard
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the content of the clipboard as string data
+    /// \brief Get the content of the clipboard as string key
     ///
     /// This function returns the content of the clipboard
     /// as a string. If the clipboard does not contain string
@@ -55,7 +55,7 @@ public:
     static String getString();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set the content of the clipboard as string data
+    /// \brief Set the content of the clipboard as string key
     ///
     /// This function sets the content of the clipboard as a
     /// string.
@@ -65,7 +65,7 @@ public:
     ///          guaranteed to work if there is currently an
     ///          open window for which events are being handled.
     ///
-    /// \param text sf::String containing the data to be sent
+    /// \param text sf::String containing the key to be sent
     /// to the clipboard
     ///
     ////////////////////////////////////////////////////////////

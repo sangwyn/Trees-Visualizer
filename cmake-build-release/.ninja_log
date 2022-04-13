@@ -1,0 +1,13 @@
+# ninja log v5
+4	514	6714093841579333	CMakeFiles/treesSFML.dir/RBTree.cpp.obj	906d316233010226
+18	1071	6714098608349106	CMakeFiles/treesSFML.dir/AVLTreeNode.cpp.obj	849ac2d493d16be8
+4	598	6714089351271345	CMakeFiles/treesSFML.dir/AVLTree.cpp.obj	3e9b41df5ebf5187
+16	521	6714096318539412	CMakeFiles/treesSFML.dir/TreeManager.cpp.obj	43b41fa5a1487707
+14	772	6714098605339252	CMakeFiles/treesSFML.dir/Globals.cpp.obj	372071e4f3bc31d5
+27	831	6714098605919198	CMakeFiles/treesSFML.dir/Button.cpp.obj	78e44b6b2ae731de
+23	862	6714098606229160	CMakeFiles/treesSFML.dir/Textbox.cpp.obj	30a31f725119a8c2
+3	1254	6714105607221155	CMakeFiles/treesSFML.dir/main.cpp.obj	46be4c3042f873b9
+22	1115	6714093636369396	CMakeFiles/treesSFML.dir/Treap.cpp.obj	2e6d11ea65fcfb5e
+31	1128	6714098608919076	CMakeFiles/treesSFML.dir/RBTreeNode.cpp.obj	c5cd6563ba240ad1
+35	1257	6714098610209045	CMakeFiles/treesSFML.dir/TreapNode.cpp.obj	40df8f5e74424834
+1254	1481	6714105609451141	treesSFML.exe	57914279930c583

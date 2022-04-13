@@ -70,7 +70,7 @@ public:
     explicit Vector2(const Vector2<U>& vector);
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     T x; ///< X coordinate of the vector
     T y; ///< Y coordinate of the vector

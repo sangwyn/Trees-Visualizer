@@ -99,7 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa9c91c34f7c6d344d5ee9b997511f754"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop playing the sound  <a href="#aa9c91c34f7c6d344d5ee9b997511f754">More...</a><br /></td></tr>
 <tr class="separator:aa9c91c34f7c6d344d5ee9b997511f754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b395e9713d0efa48a18628c8ec1972e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Sound.html#a8b395e9713d0efa48a18628c8ec1972e">setBuffer</a> (const <a class="el" href="classsf_1_1SoundBuffer.html">SoundBuffer</a> &amp;buffer)</td></tr>
-<tr class="memdesc:a8b395e9713d0efa48a18628c8ec1972e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the source buffer containing the audio data to play.  <a href="#a8b395e9713d0efa48a18628c8ec1972e">More...</a><br /></td></tr>
+<tr class="memdesc:a8b395e9713d0efa48a18628c8ec1972e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the source buffer containing the audio key to play.  <a href="#a8b395e9713d0efa48a18628c8ec1972e">More...</a><br /></td></tr>
 <tr class="separator:a8b395e9713d0efa48a18628c8ec1972e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af23ab4f78f975bbabac031102321612b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Sound.html#af23ab4f78f975bbabac031102321612b">setLoop</a> (bool loop)</td></tr>
 <tr class="memdesc:af23ab4f78f975bbabac031102321612b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the sound should loop after reaching the end.  <a href="#af23ab4f78f975bbabac031102321612b">More...</a><br /></td></tr>
@@ -180,7 +180,7 @@ Protected Attributes</h2></td></tr>
 <li>3D spatial features (position, attenuation, ...).</li>
 </ul>
 <p><a class="el" href="classsf_1_1Sound.html" title="Regular sound that can be played in the audio environment. ">sf::Sound</a> is perfect for playing short sounds that can fit in memory and require no latency, like foot steps or gun shots. For longer sounds, like background musics or long speeches, rather see <a class="el" href="classsf_1_1Music.html" title="Streamed music played from an audio file. ">sf::Music</a> (which is based on streaming).</p>
-<p>In order to work, a sound must be given a buffer of audio data to play. Audio data (samples) is stored in <a class="el" href="classsf_1_1SoundBuffer.html" title="Storage for audio samples defining a sound. ">sf::SoundBuffer</a>, and attached to a sound with the <a class="el" href="classsf_1_1Sound.html#a8b395e9713d0efa48a18628c8ec1972e" title="Set the source buffer containing the audio data to play. ">setBuffer()</a> function. The buffer object attached to a sound must remain alive as long as the sound uses it. Note that multiple sounds can use the same sound buffer at the same time.</p>
+<p>In order to work, a sound must be given a buffer of audio key to play. Audio key (samples) is stored in <a class="el" href="classsf_1_1SoundBuffer.html" title="Storage for audio samples defining a sound. ">sf::SoundBuffer</a>, and attached to a sound with the <a class="el" href="classsf_1_1Sound.html#a8b395e9713d0efa48a18628c8ec1972e" title="Set the source buffer containing the audio key to play. ">setBuffer()</a> function. The buffer object attached to a sound must remain alive as long as the sound uses it. Note that multiple sounds can use the same sound buffer at the same time.</p>
 <p>Usage example: </p><div class="fragment"><div class="line"><a class="code" href="classsf_1_1SoundBuffer.html">sf::SoundBuffer</a> buffer;</div><div class="line">buffer.<a class="code" href="classsf_1_1SoundBuffer.html#a2be6a8025c97eb622a7dff6cf2594394">loadFromFile</a>(<span class="stringliteral">&quot;sound.wav&quot;</span>);</div><div class="line"></div><div class="line"><a class="code" href="classsf_1_1Sound.html">sf::Sound</a> sound;</div><div class="line">sound.<a class="code" href="classsf_1_1Sound.html#a8b395e9713d0efa48a18628c8ec1972e">setBuffer</a>(buffer);</div><div class="line">sound.<a class="code" href="classsf_1_1Sound.html#a2953ffe632536e72e696fd880ced2532">play</a>();</div></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1SoundBuffer.html" title="Storage for audio samples defining a sound. ">sf::SoundBuffer</a>, <a class="el" href="classsf_1_1Music.html" title="Streamed music played from an audio file. ">sf::Music</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Sound_8hpp_source.html#l00045">45</a> of file <a class="el" href="Sound_8hpp_source.html">Sound.hpp</a>.</p>
@@ -266,7 +266,7 @@ Protected Attributes</h2></td></tr>
 <p>Construct the sound with a buffer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buffer</td><td><a class="el" href="classsf_1_1Sound.html" title="Regular sound that can be played in the audio environment. ">Sound</a> buffer containing the audio data to play with the sound </td></tr>
+    <tr><td class="paramname">buffer</td><td><a class="el" href="classsf_1_1Sound.html" title="Regular sound that can be played in the audio environment. ">Sound</a> buffer containing the audio key to play with the sound </td></tr>
   </table>
   </dd>
 </dl>
@@ -746,7 +746,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the source buffer containing the audio data to play. </p>
+<p>Set the source buffer containing the audio key to play. </p>
 <p>It is important to note that the sound buffer is not copied, thus the <a class="el" href="classsf_1_1SoundBuffer.html" title="Storage for audio samples defining a sound. ">sf::SoundBuffer</a> instance must remain alive as long as it is attached to the sound.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

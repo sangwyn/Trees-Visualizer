@@ -71,7 +71,7 @@ struct ContextSettings
     }
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     unsigned int depthBits;         ///< Bits of the depth buffer
     unsigned int stencilBits;       ///< Bits of the stencil buffer

@@ -51,7 +51,7 @@
 </div><!--header-->
 <div class="contents">
 
-<p>Specialized <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound data. ">SoundRecorder</a> which stores the captured audio data into a sound buffer.  
+<p>Specialized <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound key. ">SoundRecorder</a> which stores the captured audio key into a sound buffer.
  <a href="classsf_1_1SoundBufferRecorder.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="SoundBufferRecorder_8hpp_source.html">SoundBufferRecorder.hpp</a>&gt;</code></p>
@@ -61,7 +61,7 @@ Inheritance diagram for sf::SoundBufferRecorder:</div>
  <div class="center">
   <img src="classsf_1_1SoundBufferRecorder.png" usemap="#sf::SoundBufferRecorder_map" alt=""/>
   <map id="sf::SoundBufferRecorder_map" name="sf::SoundBufferRecorder_map">
-<area href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound data. " alt="sf::SoundRecorder" shape="rect" coords="0,56,152,80"/>
+<area href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound key. " alt="sf::SoundRecorder" shape="rect" coords="0,56,152,80"/>
 <area href="classsf_1_1AlResource.html" title="Base class for classes that require an OpenAL context. " alt="sf::AlResource" shape="rect" coords="0,0,152,24"/>
 </map>
  </div></div>
@@ -72,7 +72,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a350f7f885ccfd12b4c6c120c23695637"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor  <a href="#a350f7f885ccfd12b4c6c120c23695637">More...</a><br /></td></tr>
 <tr class="separator:a350f7f885ccfd12b4c6c120c23695637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3a8d7a612cb885ed2f58bb86aa24acb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classsf_1_1SoundBuffer.html">SoundBuffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundBufferRecorder.html#aa3a8d7a612cb885ed2f58bb86aa24acb">getBuffer</a> () const</td></tr>
-<tr class="memdesc:aa3a8d7a612cb885ed2f58bb86aa24acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sound buffer containing the captured audio data.  <a href="#aa3a8d7a612cb885ed2f58bb86aa24acb">More...</a><br /></td></tr>
+<tr class="memdesc:aa3a8d7a612cb885ed2f58bb86aa24acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sound buffer containing the captured audio key.  <a href="#aa3a8d7a612cb885ed2f58bb86aa24acb">More...</a><br /></td></tr>
 <tr class="separator:aa3a8d7a612cb885ed2f58bb86aa24acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a715f0fd2f228c83d79aaedca562ae51f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundRecorder.html#a715f0fd2f228c83d79aaedca562ae51f">start</a> (unsigned int sampleRate=44100)</td></tr>
 <tr class="memdesc:a715f0fd2f228c83d79aaedca562ae51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the capture.  <a href="#a715f0fd2f228c83d79aaedca562ae51f">More...</a><br /></td></tr>
@@ -111,24 +111,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a531a7445fc8a48eaf9fc039c83f17c6f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundBufferRecorder.html#a531a7445fc8a48eaf9fc039c83f17c6f">onStart</a> ()</td></tr>
-<tr class="memdesc:a531a7445fc8a48eaf9fc039c83f17c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start capturing audio data.  <a href="#a531a7445fc8a48eaf9fc039c83f17c6f">More...</a><br /></td></tr>
+<tr class="memdesc:a531a7445fc8a48eaf9fc039c83f17c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start capturing audio key.  <a href="#a531a7445fc8a48eaf9fc039c83f17c6f">More...</a><br /></td></tr>
 <tr class="separator:a531a7445fc8a48eaf9fc039c83f17c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ceb94de14632ae8c1b78faf603b4767"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundBufferRecorder.html#a9ceb94de14632ae8c1b78faf603b4767">onProcessSamples</a> (const Int16 *samples, std::size_t sampleCount)</td></tr>
 <tr class="memdesc:a9ceb94de14632ae8c1b78faf603b4767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a new chunk of recorded samples.  <a href="#a9ceb94de14632ae8c1b78faf603b4767">More...</a><br /></td></tr>
 <tr class="separator:a9ceb94de14632ae8c1b78faf603b4767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8e53849312413431873a5869d509f1e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundBufferRecorder.html#ab8e53849312413431873a5869d509f1e">onStop</a> ()</td></tr>
-<tr class="memdesc:ab8e53849312413431873a5869d509f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop capturing audio data.  <a href="#ab8e53849312413431873a5869d509f1e">More...</a><br /></td></tr>
+<tr class="memdesc:ab8e53849312413431873a5869d509f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop capturing audio key.  <a href="#ab8e53849312413431873a5869d509f1e">More...</a><br /></td></tr>
 <tr class="separator:ab8e53849312413431873a5869d509f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85b7fb8a86c08b5084f8f142767bccf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1SoundRecorder.html#a85b7fb8a86c08b5084f8f142767bccf6">setProcessingInterval</a> (<a class="el" href="classsf_1_1Time.html">Time</a> interval)</td></tr>
 <tr class="memdesc:a85b7fb8a86c08b5084f8f142767bccf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the processing interval.  <a href="#a85b7fb8a86c08b5084f8f142767bccf6">More...</a><br /></td></tr>
 <tr class="separator:a85b7fb8a86c08b5084f8f142767bccf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Specialized <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound data. ">SoundRecorder</a> which stores the captured audio data into a sound buffer. </p>
-<p><a class="el" href="classsf_1_1SoundBufferRecorder.html" title="Specialized SoundRecorder which stores the captured audio data into a sound buffer. ">sf::SoundBufferRecorder</a> allows to access a recorded sound through a <a class="el" href="classsf_1_1SoundBuffer.html" title="Storage for audio samples defining a sound. ">sf::SoundBuffer</a>, so that it can be played, saved to a file, etc.</p>
-<p>It has the same simple interface as its base class (<a class="el" href="classsf_1_1SoundRecorder.html#a715f0fd2f228c83d79aaedca562ae51f" title="Start the capture. ">start()</a>, <a class="el" href="classsf_1_1SoundRecorder.html#a8d9c8346aa9aa409cfed4a1101159c4c" title="Stop the capture. ">stop()</a>) and adds a function to retrieve the recorded sound buffer (<a class="el" href="classsf_1_1SoundBufferRecorder.html#aa3a8d7a612cb885ed2f58bb86aa24acb" title="Get the sound buffer containing the captured audio data. ">getBuffer()</a>).</p>
-<p>As usual, don't forget to call the <a class="el" href="classsf_1_1SoundRecorder.html#aab2bd0fee9e48d6cfd449b1cb078ce5a" title="Check if the system supports audio capture. ">isAvailable()</a> function before using this class (see <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound data. ">sf::SoundRecorder</a> for more details about this).</p>
-<p>Usage example: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="classsf_1_1SoundRecorder.html#aab2bd0fee9e48d6cfd449b1cb078ce5a">sf::SoundBufferRecorder::isAvailable</a>())</div><div class="line">{</div><div class="line">    <span class="comment">// Record some audio data</span></div><div class="line">    <a class="code" href="classsf_1_1SoundBufferRecorder.html">sf::SoundBufferRecorder</a> recorder;</div><div class="line">    recorder.<a class="code" href="classsf_1_1SoundRecorder.html#a715f0fd2f228c83d79aaedca562ae51f">start</a>();</div><div class="line">    ...</div><div class="line">    recorder.<a class="code" href="classsf_1_1SoundRecorder.html#a8d9c8346aa9aa409cfed4a1101159c4c">stop</a>();</div><div class="line"></div><div class="line">    <span class="comment">// Get the buffer containing the captured audio data</span></div><div class="line">    <span class="keyword">const</span> <a class="code" href="classsf_1_1SoundBuffer.html">sf::SoundBuffer</a>&amp; buffer = recorder.<a class="code" href="classsf_1_1SoundBufferRecorder.html#aa3a8d7a612cb885ed2f58bb86aa24acb">getBuffer</a>();</div><div class="line"></div><div class="line">    <span class="comment">// Save it to a file (for example...)</span></div><div class="line">    buffer.<a class="code" href="classsf_1_1SoundBuffer.html#aade64260c6375580a085314a30be007e">saveToFile</a>(<span class="stringliteral">&quot;my_record.ogg&quot;</span>);</div><div class="line">}</div></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound data. ">sf::SoundRecorder</a> </dd></dl>
+<div class="textblock"><p>Specialized <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound key. ">SoundRecorder</a> which stores the captured audio key into a sound buffer. </p>
+<p><a class="el" href="classsf_1_1SoundBufferRecorder.html" title="Specialized SoundRecorder which stores the captured audio key into a sound buffer. ">sf::SoundBufferRecorder</a> allows to access a recorded sound through a <a class="el" href="classsf_1_1SoundBuffer.html" title="Storage for audio samples defining a sound. ">sf::SoundBuffer</a>, so that it can be played, saved to a file, etc.</p>
+<p>It has the same simple interface as its base class (<a class="el" href="classsf_1_1SoundRecorder.html#a715f0fd2f228c83d79aaedca562ae51f" title="Start the capture. ">start()</a>, <a class="el" href="classsf_1_1SoundRecorder.html#a8d9c8346aa9aa409cfed4a1101159c4c" title="Stop the capture. ">stop()</a>) and adds a function to retrieve the recorded sound buffer (<a class="el" href="classsf_1_1SoundBufferRecorder.html#aa3a8d7a612cb885ed2f58bb86aa24acb" title="Get the sound buffer containing the captured audio key. ">getBuffer()</a>).</p>
+<p>As usual, don't forget to call the <a class="el" href="classsf_1_1SoundRecorder.html#aab2bd0fee9e48d6cfd449b1cb078ce5a" title="Check if the system supports audio capture. ">isAvailable()</a> function before using this class (see <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound key. ">sf::SoundRecorder</a> for more details about this).</p>
+<p>Usage example: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="classsf_1_1SoundRecorder.html#aab2bd0fee9e48d6cfd449b1cb078ce5a">sf::SoundBufferRecorder::isAvailable</a>())</div><div class="line">{</div><div class="line">    <span class="comment">// Record some audio key</span></div><div class="line">    <a class="code" href="classsf_1_1SoundBufferRecorder.html">sf::SoundBufferRecorder</a> recorder;</div><div class="line">    recorder.<a class="code" href="classsf_1_1SoundRecorder.html#a715f0fd2f228c83d79aaedca562ae51f">start</a>();</div><div class="line">    ...</div><div class="line">    recorder.<a class="code" href="classsf_1_1SoundRecorder.html#a8d9c8346aa9aa409cfed4a1101159c4c">stop</a>();</div><div class="line"></div><div class="line">    <span class="comment">// Get the buffer containing the captured audio key</span></div><div class="line">    <span class="keyword">const</span> <a class="code" href="classsf_1_1SoundBuffer.html">sf::SoundBuffer</a>&amp; buffer = recorder.<a class="code" href="classsf_1_1SoundBufferRecorder.html#aa3a8d7a612cb885ed2f58bb86aa24acb">getBuffer</a>();</div><div class="line"></div><div class="line">    <span class="comment">// Save it to a file (for example...)</span></div><div class="line">    buffer.<a class="code" href="classsf_1_1SoundBuffer.html#aade64260c6375580a085314a30be007e">saveToFile</a>(<span class="stringliteral">&quot;my_record.ogg&quot;</span>);</div><div class="line">}</div></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound key. ">sf::SoundRecorder</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SoundBufferRecorder_8hpp_source.html#l00044">44</a> of file <a class="el" href="SoundBufferRecorder_8hpp_source.html">SoundBufferRecorder.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -196,7 +196,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the sound buffer containing the captured audio data. </p>
+<p>Get the sound buffer containing the captured audio key. </p>
 <p>The sound buffer is valid only after the capture has ended. This function provides a read-only access to the internal sound buffer, but it can be copied if you need to make any modification to it.</p>
 <dl class="section return"><dt>Returns</dt><dd>Read-only access to the sound buffer </dd></dl>
 
@@ -342,7 +342,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if the system supports audio capture. </p>
-<p>This function should always be called before using the audio capture features. If it returns false, then any attempt to use <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound data. ">sf::SoundRecorder</a> or one of its derived classes will fail.</p>
+<p>This function should always be called before using the audio capture features. If it returns false, then any attempt to use <a class="el" href="classsf_1_1SoundRecorder.html" title="Abstract base class for capturing sound key. ">sf::SoundRecorder</a> or one of its derived classes will fail.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if audio capture is supported, false otherwise </dd></dl>
 
 </div>
@@ -418,7 +418,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Start capturing audio data. </p>
+<p>Start capturing audio key. </p>
 <dl class="section return"><dt>Returns</dt><dd>True to start the capture, or false to abort it </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classsf_1_1SoundRecorder.html#a7af418fb036201d3f85745bef78ce77f">sf::SoundRecorder</a>.</p>
@@ -448,7 +448,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Stop capturing audio data. </p>
+<p>Stop capturing audio key. </p>
 
 <p>Reimplemented from <a class="el" href="classsf_1_1SoundRecorder.html#aefc36138ca1e96c658301280e4a31b64">sf::SoundRecorder</a>.</p>
 
@@ -552,7 +552,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the processing interval. </p>
-<p>The processing interval controls the period between calls to the onProcessSamples function. You may want to use a small interval if you want to process the recorded data in real time, for example.</p>
+<p>The processing interval controls the period between calls to the onProcessSamples function. You may want to use a small interval if you want to process the recorded key in real time, for example.</p>
 <p>Note: this is only a hint, the actual period may vary. So don't rely on this parameter to implement precise timing.</p>
 <p>The default processing interval is 100 ms.</p>
 <dl class="params"><dt>Parameters</dt><dd>

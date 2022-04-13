@@ -74,7 +74,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af68e54bc9bfac19554c84601156fe93f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1InputSoundFile.html#af68e54bc9bfac19554c84601156fe93f">openFromFile</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:af68e54bc9bfac19554c84601156fe93f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a sound file from the disk for reading.  <a href="#af68e54bc9bfac19554c84601156fe93f">More...</a><br /></td></tr>
 <tr class="separator:af68e54bc9bfac19554c84601156fe93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e034a8e9e69ca3c33a3f11180250400"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1InputSoundFile.html#a4e034a8e9e69ca3c33a3f11180250400">openFromMemory</a> (const void *data, std::size_t sizeInBytes)</td></tr>
+<tr class="memitem:a4e034a8e9e69ca3c33a3f11180250400"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1InputSoundFile.html#a4e034a8e9e69ca3c33a3f11180250400">openFromMemory</a> (const void *key, std::size_t sizeInBytes)</td></tr>
 <tr class="memdesc:a4e034a8e9e69ca3c33a3f11180250400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a sound file in memory for reading.  <a href="#a4e034a8e9e69ca3c33a3f11180250400">More...</a><br /></td></tr>
 <tr class="separator:a4e034a8e9e69ca3c33a3f11180250400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32b76497aeb088a2b46dc6efd819b909"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1InputSoundFile.html#a32b76497aeb088a2b46dc6efd819b909">openFromStream</a> (<a class="el" href="classsf_1_1InputStream.html">InputStream</a> &amp;stream)</td></tr>
@@ -314,7 +314,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">bool sf::InputSoundFile::openFromMemory </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -334,8 +334,8 @@ Public Member Functions</h2></td></tr>
 <p>The supported audio formats are: WAV (PCM only), OGG/Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Pointer to the file data in memory </td></tr>
-    <tr><td class="paramname">sizeInBytes</td><td>Size of the data to load, in bytes</td></tr>
+    <tr><td class="paramname">key</td><td>Pointer to the file key in memory </td></tr>
+    <tr><td class="paramname">sizeInBytes</td><td>Size of the key to load, in bytes</td></tr>
   </table>
   </dd>
 </dl>

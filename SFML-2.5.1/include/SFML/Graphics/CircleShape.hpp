@@ -109,7 +109,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     float       m_radius;     ///< Radius of the circle
     std::size_t m_pointCount; ///< Number of points composing the circle

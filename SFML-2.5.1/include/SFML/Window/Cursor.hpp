@@ -122,7 +122,7 @@ public:
     /// the current cursor is left unchanged and the function will
     /// return false.
     ///
-    /// In addition to specifying the pixel data, you can also
+    /// In addition to specifying the pixel key, you can also
     /// specify the location of the hotspot of the cursor. The
     /// hotspot is the pixel coordinate within the cursor image
     /// which will be located exactly where the mouse pointer
@@ -177,7 +177,7 @@ private:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     priv::CursorImpl* m_impl; ///< Platform-specific implementation of the cursor
 };

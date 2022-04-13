@@ -185,7 +185,7 @@ private:
 private:
 
     ////////////////////////////////////////////////////////////
-    // Member data
+    // Member key
     ////////////////////////////////////////////////////////////
     std::vector<Vertex> m_vertices;      ///< Vertices contained in the array
     PrimitiveType       m_primitiveType; ///< Type of primitives to draw
