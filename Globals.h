@@ -21,6 +21,7 @@ const sf::Color kBlackNodeTextColor = sf::Color::White;
 const sf::Color kRedNodeColor = sf::Color::Red;
 const sf::Color kRedNodeTextColor = sf::Color::White;
 
+const float kVertIncrease = 0.7f;
 const float kRadius = 30.0f;
 const float kVertDistance = 110.0f;
 const float kHorDistance = 20.0f;

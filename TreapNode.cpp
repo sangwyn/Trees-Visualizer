@@ -3,7 +3,7 @@
 #include <random>
 
 TreapNode::TreapNode(int key) {
-    priority = std::rand() % 1001;
+    priority = std::rand() % 10001;
     this->key = key;
     left = right = nullptr;
     sprite.setFillColor(kDefaultNodeColor);
@@ -48,6 +48,8 @@ void TreapNode::Draw(sf::RenderWindow &window,
                        int max_depth,
                        std::vector<sf::Text> &all_text,
                      std::vector<sf::CircleShape> &all_sprites) {
+//    sprite.setRadius(kRadius * max_depth * 0.4f);
+    sprite.setOrigin({sprite.getGlobalBounds().width / 2, sprite.getGlobalBounds().height / 2});
     text.setString(ToStr(key) + ";" + ToStr(priority));
     text.setFont(font);
     if (sprite.getGlobalBounds().contains(mouse_pos)) {
@@ -62,7 +64,8 @@ void TreapNode::Draw(sf::RenderWindow &window,
     if (parent) {
         sf::Vector2f base_pos = parent->GetPosition();
         float delta_x = pow(2, max_depth - depth) * kRadius;
-        float delta_y = kVertDistance;
+//        delta_x *= max_depth * 0.4f;
+        float delta_y = kVertDistance * max_depth * kVertIncrease;
         if (this == parent->right) {
             sprite.setPosition(
                 base_pos.x + delta_x,
@@ -92,6 +95,18 @@ void TreapNode::Draw(sf::RenderWindow &window,
                        text.getGlobalBounds().height + 1);
         text.setPosition(sprite.getPosition());
     }
+//    while (sprite.getGlobalBounds().contains({text.getGlobalBounds().left,
+//                                              text.getGlobalBounds().top}) &&
+//        sprite.getGlobalBounds().contains({text.getGlobalBounds().left
+//                                               + text.getGlobalBounds().width,
+//                                           text.getGlobalBounds().top
+//                                               + text.getGlobalBounds().height})) {
+//        text.setCharacterSize(text.getCharacterSize() + 1);
+//        text.setOrigin(text.getGlobalBounds().width / 2,
+//                       text.getGlobalBounds().height + 1);
+//        text.setPosition(sprite.getPosition());
+//    }
+//    text.setCharacterSize(text.getCharacterSize() - 1);
 
     all_sprites.push_back(sprite);
     all_text.push_back(text);

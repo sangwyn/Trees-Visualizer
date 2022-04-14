@@ -118,7 +118,7 @@ RBTreeNode *RBTree::FindMax(RBTreeNode *&p) {
     return p->right ? FindMax(p->right) : p;
 }
 
-void RBTree::FixDelete(RBTreeNode *&root, RBTreeNode *&p) {
+void RBTree::FixDelete(RBTreeNode *root, RBTreeNode *p) {
     RBTreeNode *parent = nullptr, *sibling = nullptr, *s_l = nullptr,
         *s_r = nullptr;
     while (p != root) {
@@ -218,6 +218,7 @@ void RBTree::FixDelete(RBTreeNode *&root, RBTreeNode *&p) {
             }
         }
     }
+    start = p;
 //    root->SetColor(false);
 }
 
@@ -229,7 +230,7 @@ void RBTree::RemoveNode(RBTreeNode *&root, int key) {
     } else if (root->data < key) {
         RemoveNode(root->right, key);
     } else {
-        if (root == start && !root->left && !root->left) {
+        if (root == start && !root->left && !root->right) {
             start = nullptr;
             delete root;
             root = nullptr;
@@ -305,6 +306,10 @@ RBTree::RBTree() {
     nil_sprite.setOutlineThickness(2);
     nil_sprite.setSize({2 * kRadius, 2 * kRadius});
     nil_sprite.setOrigin(kRadius, kRadius);
+
+    nil_text.setOrigin(nil_text.getGlobalBounds().width / 2,
+                       nil_text.getGlobalBounds().height / 2);
+    nil_text.setPosition(nil_sprite.getPosition());
 }
 
 void RBTree::DrawNil(sf::RenderWindow &window,
@@ -313,10 +318,16 @@ void RBTree::DrawNil(sf::RenderWindow &window,
                      int depth,
                      int max_depth,
                      bool left) {
+//    nil_sprite.setSize({2 * kRadius * max_depth * 0.4f,
+//                        2 * kRadius * max_depth * 0.4f});
+    nil_text.setOrigin(nil_text.getGlobalBounds().width / 2,
+                       nil_text.getGlobalBounds().height / 2);
     nil_text.setFont(font);
     sf::Vector2f base_pos = parent->GetPosition();
     float delta_x = pow(2, max_depth - depth) * kRadius;
+//    delta_x *= max_depth * 0.4f;
     float delta_y = kVertDistance;
+    delta_y *= max_depth * kVertIncrease;
     if (!left) {
         nil_sprite.setPosition(
             base_pos.x + delta_x,
@@ -333,7 +344,7 @@ void RBTree::DrawNil(sf::RenderWindow &window,
     window.draw(rib);
 
     nil_text.setOrigin(nil_text.getGlobalBounds().width / 2,
-                       nil_text.getGlobalBounds().height + 1);
+                       nil_text.getGlobalBounds().height / 2);
     nil_text.setPosition(nil_sprite.getPosition());
     while (
         !nil_sprite.getGlobalBounds().contains({nil_text.getGlobalBounds().left,
@@ -345,9 +356,24 @@ void RBTree::DrawNil(sf::RenderWindow &window,
                                                             + nil_text.getGlobalBounds().height})) {
         nil_text.setCharacterSize(nil_text.getCharacterSize() - 1);
         nil_text.setOrigin(nil_text.getGlobalBounds().width / 2,
-                           nil_text.getGlobalBounds().height + 1);
+                           nil_text.getGlobalBounds().height / 2);
         nil_text.setPosition(nil_sprite.getPosition());
     }
+//    nil_text.setOrigin(nil_text.getGlobalBounds().width / 2,
+//                       nil_text.getGlobalBounds().height / 2);
+//    nil_text.setPosition(nil_sprite.getPosition());
+//    while (nil_sprite.getGlobalBounds().contains({nil_text.getGlobalBounds().left,
+//                                              nil_text.getGlobalBounds().top}) &&
+//        nil_sprite.getGlobalBounds().contains({nil_text.getGlobalBounds().left
+//                                               + nil_text.getGlobalBounds().width,
+//                                           nil_text.getGlobalBounds().top
+//                                               + nil_text.getGlobalBounds().height})) {
+//        nil_text.setCharacterSize(nil_text.getCharacterSize() + 1);
+//        nil_text.setOrigin(nil_text.getGlobalBounds().width / 2,
+//                           nil_text.getGlobalBounds().height / 2);
+//        nil_text.setPosition(nil_sprite.getPosition());
+//    }
+//    nil_text.setCharacterSize(nil_text.getCharacterSize() - 1);
 
     window.draw(nil_sprite);
     window.draw(nil_text);

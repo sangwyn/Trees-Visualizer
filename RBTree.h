@@ -8,7 +8,7 @@ class RBTree {
   sf::RectangleShape nil_sprite;
   sf::Text nil_text;
   void FixInsert(RBTreeNode *&root, RBTreeNode *&p);
-  void FixDelete(RBTreeNode *&root, RBTreeNode *&p);
+  void FixDelete(RBTreeNode *root, RBTreeNode *p);
   void RightRotate(RBTreeNode *&root, RBTreeNode *&p);
   void LeftRotate(RBTreeNode *&root, RBTreeNode *&p);
  public:

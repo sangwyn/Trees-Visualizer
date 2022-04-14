@@ -71,18 +71,18 @@ SplayTreeNode *SplayTree::InsertNode(SplayTreeNode *&p, int key) {
 SplayTreeNode *SplayTree::RemoveNode(SplayTreeNode *&p, int key) {
     p = Splay(p, key);
     SplayTreeNode *left = p->left, *right = p->right;
-    delete p;
-    p = nullptr;
-    if (left) {
-        if (right)
-            right->left = left->right;
-        left->right = right;
-        return left;
-    } else if (right) {
-        return right;
+    SplayTreeNode *tmp;
+    if (!left) {
+        tmp = p;
+        p = p->right;
     } else {
-        return nullptr;
+        tmp = p;
+        p = Splay(p->left, key);
+        p->right = tmp->right;
     }
+    delete tmp;
+    tmp = nullptr;
+    return p;
 }
 
 void SplayTree::Draw(sf::RenderWindow &window,
